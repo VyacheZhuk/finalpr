@@ -52,7 +52,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: vyachezhuk/app
+          images: vyachezhuk/myapp
           
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
