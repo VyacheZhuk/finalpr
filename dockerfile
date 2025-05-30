@@ -13,7 +13,7 @@ FROM alpine:latest
 
 RUN apk --no-cache add ca-certificates
 
-COPY --from=build main .
+COPY --from=build /app/main .
 
 EXPOSE 8080
 
