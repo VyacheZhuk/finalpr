@@ -50,14 +50,15 @@ jobs:
 
       - name: Get Docker image metadata
         id: meta
-        uses: docker/metadata-action@v5.5.1
+        uses: docker/metadata-action@v5.6
         with:
           images: vyachezhuk/myapp
+          tags: latest ${{github.ref}}
           
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: vyachezhuk/myapp:${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
